@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Word Guess Game</title>
+    <link rel="stylesheet" type="text/css" href="../Word_Guess_Name/assets/css/reset.css">
+</head>
+
+<body>
+
+<p>The word is:</p>
+<p id="hiddenWord">****</p>
+
+<p>Guess a letter:</p>
+<p id="guessLetter">_</p>
+
+<p>Guessed Letters:</p>
+<p id="guessedLetters">A H U</p>
+
+<p>Remaining Guesses:</p>
+<p id="remainingGuesses"></p>
+
+
+<script>
+var wordsList = ["Brazil","Canada","Mexico","Cuba","France","Italy"];
+var remainGuessCount = 10;
+var chosenWord = "______";
+
+function displayInitialData(){
+    document.getElementById("hiddenWord").innerHTML = "*";
+    document.getElementById("guessLetter").innerHTML = "";
+    document.getElementById("guessedLetters").innerHTML = "";
+    document.getElementById("remainingGuesses").innerHTML = 10;
+}
+
+function guessLetter (word,letter) {
+    guessFlag = false;
+    for(var i=0;i<word.length;i++){
+        if (letter == word.charAt(i)) {
+            guessFlag = true;
+            document.getElementById("guessLetter").innerHTML = letter;
+        }
+    }
+    if (guessFlag) {
+        console.log(letter);
+    } else {
+        document.getElementById("guessedLetters").innerHTML += letter;
+        document.getElementById("remainingGuesses").innerHTML =  remainGuessCount;
+    }
+
+}
+
+displayInitialData();
+
+guessLetter("Brazil","t");
+</script>
+
+</body>
+
+</html>
