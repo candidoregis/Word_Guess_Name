@@ -10,50 +10,107 @@
 <body>
 
 <p>The word is:</p>
-<p id="hiddenWord">****</p>
+<p id="hiddenWord"></p>
 
 <p>Guess a letter:</p>
-<p id="guessLetter">_</p>
+<p id="guessLetter"></p>
 
 <p>Guessed Letters:</p>
-<p id="guessedLetters">A H U</p>
+<p id="guessedLetters"></p>
 
 <p>Remaining Guesses:</p>
 <p id="remainingGuesses"></p>
 
 
 <script>
+
+// VARIABLES    
 var wordsList = ["Brazil","Canada","Mexico","Cuba","France","Italy"];
 var remainGuessCount = 10;
-var chosenWord = "______";
+var chosenWord = "";
+var hiddenWord = "";
+var guessedLetters = ""; 
+var gLetter = "";
 
-function displayInitialData(){
-    document.getElementById("hiddenWord").innerHTML = "*";
-    document.getElementById("guessLetter").innerHTML = "";
-    document.getElementById("guessedLetters").innerHTML = "";
-    document.getElementById("remainingGuesses").innerHTML = 10;
+// FUNCTIONS
+// Function do randomly select a word from the provided list and update global data
+function wordSelector(){
+    var position = Math.floor((Math.random() * 6) + 1);
+    chosenWord = wordsList[position];
+    for(var i=0;i<chosenWord.length;i++){
+        hiddenWord += "_";
+    }
 }
 
-function guessLetter (word,letter) {
-    guessFlag = false;
-    for(var i=0;i<word.length;i++){
-        if (letter == word.charAt(i)) {
+//Update data to the screen
+function updateData(){
+    document.getElementById("hiddenWord").innerHTML = hiddenWord;
+    document.getElementById("guessLetter").innerHTML = gLetter;
+    document.getElementById("guessedLetters").innerHTML = guessedLetters;
+    document.getElementById("remainingGuesses").innerHTML = remainGuessCount;
+}
+
+function replaceChar(index,newChar) {
+    var str = hiddenWord;
+    if(index > str.length-1) {
+        return str;
+    }
+    return str.substr(0,index) + newChar + str.substr(index+1);
+}
+
+//Verify if guessed letter is part of the chosen word
+function guessLetter (letter) {
+    var guessFlag = false;
+    gLetter = letter;
+    console.log("gLetter: "+letter);
+    for(var i=0;i<chosenWord.length;i++){
+        if (letter == chosenWord.charAt(i)) {
+            console.log("chosenWordLetter: "+chosenWord.charAt(i));
             guessFlag = true;
-            document.getElementById("guessLetter").innerHTML = letter;
+            console.log("hiddenWord: "+hiddenWord);
+            hiddenWord = replaceChar(i,letter);
+            console.log("hiddenWord: "+hiddenWord);
         }
     }
-    if (guessFlag) {
-        console.log(letter);
-    } else {
-        document.getElementById("guessedLetters").innerHTML += letter;
-        document.getElementById("remainingGuesses").innerHTML =  remainGuessCount;
+    if (!guessFlag) {
+        guessedLetters += letter;
+        remainGuessCount--;
     }
-
+    updateData();
 }
 
-displayInitialData();
+wordSelector();
+updateData();
 
-guessLetter("Brazil","t");
+document.onkeyup = function(event) {
+    
+    var userInput = event.key.toLowerCase();
+    guessLetter(userInput);
+// // Only run this code if "t" or "f" were pressed.
+// if (userInput === "t" || userInput === "f") {
+
+//   // If they guess the correct answer, increase and update score, alert them they got it right.
+//   if (userInput === questions[questionIndex].a) {
+//     alert("Correct!");
+//     score++;
+//     updateScore();
+//   }
+//   // If wrong, alert them they are wrong.
+//   else {
+//     alert("Wrong!");
+//   }
+
+//   // Increment the questionIndex variable and call the renderQuestion function.
+//   questionIndex++;
+//   renderQuestion();
+
+// }
+
+};
+
+
+
+
 </script>
 
 </body>
