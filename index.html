@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Word Guess Game</title>
-    <link rel="stylesheet" type="text/css" href="../Word_Guess_Name/assets/css/reset.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../Word_Guess_Name/assets/css/reset.css"> -->
+    <link rel="stylesheet" type="text/css" href="../Word_Guess_Name-master/assets/css/reset.css">
+
 </head>
 
 <body>
@@ -31,11 +33,13 @@ var chosenWord = "";
 var hiddenWord = "";
 var guessedLetters = ""; 
 var gLetter = "";
+var userInput = "";
 
 // FUNCTIONS
 // Function do randomly select a word from the provided list and update global data
 function wordSelector(){
-    var position = Math.floor((Math.random() * 6) + 1);
+    var position = Math.floor(Math.random() * wordsList.length);
+    console.log(position);
     chosenWord = wordsList[position];
     for(var i=0;i<chosenWord.length;i++){
         hiddenWord += "_";
@@ -65,11 +69,11 @@ function guessLetter (letter) {
     console.log("gLetter: "+letter);
     for(var i=0;i<chosenWord.length;i++){
         if (letter == chosenWord.charAt(i)) {
-            console.log("chosenWordLetter: "+chosenWord.charAt(i));
+            //console.log("chosenWordLetter: "+chosenWord.charAt(i));
             guessFlag = true;
-            console.log("hiddenWord: "+hiddenWord);
+            //console.log("hiddenWord: "+hiddenWord);
             hiddenWord = replaceChar(i,letter);
-            console.log("hiddenWord: "+hiddenWord);
+            //console.log("hiddenWord: "+hiddenWord);
         }
     }
     if (!guessFlag) {
@@ -79,13 +83,42 @@ function guessLetter (letter) {
     updateData();
 }
 
+function justLetters(input){
+    var regex = /[^a-z]/gi;
+    var innp = "a";
+    var result = regex[Symbol.match](innp);
+    alert(result);
+    if (result) {
+        alert('Your name have accepted : you can try another');
+        return true;
+    } else {
+        alert('NO');
+        return false;
+    }
+}
+
+
 wordSelector();
 updateData();
 
 document.onkeyup = function(event) {
     
-    var userInput = event.key.toLowerCase();
-    guessLetter(userInput);
+    userInput = event.key.toLowerCase();
+   // var letters = /^[A-Za-z]*$/;
+    
+
+
+
+
+
+    //console.log(letters);
+    console.log(userInput);
+      if(justLetters(userInput)){
+          guessLetter(userInput);
+      } else {
+          return;
+      }
+      
 // // Only run this code if "t" or "f" were pressed.
 // if (userInput === "t" || userInput === "f") {
 
