@@ -2,8 +2,8 @@
 // VARIABLES    
 var wordsList = ["brazil","canada","mexico","cuba","france","italy"];
 var remainGuessCount = 10;
-var chosenWord = "";
-var hiddenWord = "";
+var chosenWord = [""];
+var hiddenWord = [""];
 var guessedLetters = ""; 
 var gLetter = "";
 var scoreWin = 0;
@@ -21,6 +21,17 @@ function wordSelector(){
     }
 }
 
+// Function do randomly select a word from the provided list and update global data
+function wordSelectorArray(){
+    var position = Math.floor(Math.random() * wordsList.length);
+    console.log(position);
+    var chWord = wordsList[position];
+    for(var i=0;i<chWord.length;i++){
+        hiddenWord[i] = "_";
+        chosenWord[i] = chWord[i];
+    }
+}
+
 //Update data to the screen
 function updateData(){
     document.getElementById("hiddenWord").innerHTML = hiddenWord;
@@ -35,18 +46,36 @@ function replaceChar(index,newChar) {
     if(index > str.length-1) {
         return str;
     }
-    return str.substr(0,index) + newChar + str.substr(index+1);
+    return str.substr(0,index) + "<span>"+ newChar +"</span>" + str.substr(index+1);
 }
 
 //Verify if guessed letter is part of the chosen word
 function guessLetter (letter) {
     var guessFlag = false;
     gLetter = letter;
-    console.log("gLetter: "+letter);
+
     for(var i=0;i<chosenWord.length;i++){
         if (letter == chosenWord.charAt(i)) {
             guessFlag = true;
             hiddenWord = replaceChar(i,letter);
+        }
+    }
+    if (!guessFlag) {
+        guessedLetters += letter;
+        remainGuessCount--;
+    }
+    updateData();
+}
+
+//Verify if guessed letter is part of the chosen word
+function guessLetterArray (letter) {
+    var guessFlag = false;
+    gLetter = letter;
+
+    for(var i=0;i<chosenWord.length;i++){
+        if (letter == chosenWord[i]) {
+            guessFlag = true;
+            hiddenWord[i] = letter;
         }
     }
     if (!guessFlag) {
@@ -86,15 +115,16 @@ function justLettersManual(input){
 
 //Resetting game's variable to initial state
 function resetGame(){
-    hiddenWord = "";
-    chosenWord = "";
+    hiddenWord = [""];
+    chosenWord = [""];
     remainGuessCount = 10;
     guessedLetters = "";
     gLetter = "";
     endGame = false;
 }
 
-wordSelector();
+ 
+wordSelectorArray();
 updateData();
 
 document.onkeyup = function(event) {
@@ -102,7 +132,7 @@ document.onkeyup = function(event) {
     var userInput = event.key.toLowerCase();
     console.log(userInput);
       if(justLettersManual(userInput)){
-          guessLetter(userInput);
+          guessLetterArray(userInput);
       } else {
           return;
       }
