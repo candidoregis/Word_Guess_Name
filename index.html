@@ -4,37 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <title>Word Guess Game</title>
-    <link rel="stylesheet" type="text/css" href="../Word_Guess_Name/assets/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="../Word_Guess_Name/assets/css/style.css">
-    <!-- <link rel="stylesheet" type="text/css" href="../Word_Guess_Name-master/assets/css/reset.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" type="text/css" href="../Word_Guess_Name/assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../Word_Guess_Name/assets/css/style.css"> -->
+    <link rel="stylesheet" type="text/css" href="../Word_Guess_Name-master/assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../Word_Guess_Name-master/assets/css/style.css">
+
 
 </head>
 
 <body>
+    <!--  -->
+    <div class="container d-flex flex-column">
+<!-- expand-md  col-12 -->
+        <div class="row header fixed-top">
+            <h1 class="display-4">Word Guess Name</h1>
+        </div> 
+        <!-- main-custom col-12 flex-grow-1   -->
+        
+        <div class="jumbotron jumbotron-fluid ">
+            
+                <h1>The word is:</h1>
+                <h1 id="hiddenWord"></h1>
+        
+                <h1>Guess a letter:</h1>
+                <h1 id="guessLetter"></h1>
+        
+                <h1>Guessed Letters:</h1>
+                <h1 id="guessedLetters"></h1>
+        
+                <h1 id="msg">Remaining Guesses:</h1>
+                <h1 id="remainingGuesses"></h1>   
 
-    <div class="container justify-content-center">
+               
 
-        <div class="row header expand-md fixed-top col-12">Word Guess Name</div>
-        
-        <div class="row justify-content-center ">
-                <p>The word is:</p>
-                <p id="hiddenWord"></p>
-        
-                <p>Guess a letter:</p>
-                <p id="guessLetter"></p>
-        
-                <p>Guessed Letters:</p>
-                <p id="guessedLetters"></p>
-        
-                <p>Remaining Guesses:</p>
-                <p id="remainingGuesses"></p>        
-        </div>
+          </div>
 
-        <div class="row footer fixed-bottom col-12">Candido Regis</div>
+
+        <!--  col-12 -->
+        <div class="row footer fixed-bottom">Candido Regis</div>
         
     </div>
 
-    <script src="../Word_Guess_Name/assets/javascript/game.js"></script>
+    <!-- <script src="../Word_Guess_Name/assets/javascript/game.js"></script> -->
+    <script src="../Word_Guess_Name-master/assets/javascript/game.js"></script>
 </body>
 
 </html>
