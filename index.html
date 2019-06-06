@@ -5,27 +5,36 @@
     <meta charset="UTF-8">
     <title>Word Guess Game</title>
     <link rel="stylesheet" type="text/css" href="../Word_Guess_Name/assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../Word_Guess_Name/assets/css/style.css">
     <!-- <link rel="stylesheet" type="text/css" href="../Word_Guess_Name-master/assets/css/reset.css"> -->
 
 </head>
 
 <body>
 
-<p>The word is:</p>
-<p id="hiddenWord"></p>
+    <div class="container justify-content-center">
 
-<p>Guess a letter:</p>
-<p id="guessLetter"></p>
+        <div class="row header expand-md fixed-top col-12">Word Guess Name</div>
+        
+        <div class="row justify-content-center ">
+                <p>The word is:</p>
+                <p id="hiddenWord"></p>
+        
+                <p>Guess a letter:</p>
+                <p id="guessLetter"></p>
+        
+                <p>Guessed Letters:</p>
+                <p id="guessedLetters"></p>
+        
+                <p>Remaining Guesses:</p>
+                <p id="remainingGuesses"></p>        
+        </div>
 
-<p>Guessed Letters:</p>
-<p id="guessedLetters"></p>
+        <div class="row footer fixed-bottom col-12">Candido Regis</div>
+        
+    </div>
 
-<p>Remaining Guesses:</p>
-<p id="remainingGuesses"></p>
-
-
-<script src="../Word_Guess_Name/assets/javascript/game.js"></script>
-
+    <script src="../Word_Guess_Name/assets/javascript/game.js"></script>
 </body>
 
 </html>

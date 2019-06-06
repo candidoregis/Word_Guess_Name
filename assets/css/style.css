@@ -1,0 +1,18 @@
+.container {
+    
+}
+
+.header {
+    background-color: #5522ff;
+    height: 10%;
+}
+
+.footer {
+    background-color: #5522ff;
+    height: 10%;
+}
+
+.main {
+    height: 80%;
+    background-color: #220011;
+}
