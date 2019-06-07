@@ -12,24 +12,33 @@ var endGame = false;
 
 // FUNCTIONS
 // Function do randomly select a word from the provided list and update global data
-function wordSelector(){
-    var position = Math.floor(Math.random() * wordsList.length);
-    console.log(position);
-    chosenWord = wordsList[position];
-    for(var i=0;i<chosenWord.length;i++){
-        hiddenWord += "_";
-    }
-}
+// function wordSelector(){
+//     var position = Math.floor(Math.random() * wordsList.length);
+//     console.log(position);
+//     chosenWord = wordsList[position];
+//     for(var i=0;i<chosenWord.length;i++){
+//         hiddenWord += "_";
+//     }
+// }
 
 // Function do randomly select a word from the provided list and update global data
 function wordSelectorArray(){
     var position = Math.floor(Math.random() * wordsList.length);
-    console.log(position);
+    //console.log(position);
     var chWord = wordsList[position];
     for(var i=0;i<chWord.length;i++){
         hiddenWord[i] = "_";
         chosenWord[i] = chWord[i];
     }
+    hiddenWord=transArrayToSpan();
+}
+
+function transArrayToSpan(){
+    var str = hiddenWord;
+    for (var i=0;i<str.length;i++){
+        str[i] = "<span class=\"hiddenL\">" + str[i] + "</span>" ;
+    }
+    return str;
 }
 
 //Update data to the screen
@@ -41,31 +50,31 @@ function updateData(){
 }
 
 //Function used to update the hidden word by displaying the char entered
-function replaceChar(index,newChar) {
-    var str = hiddenWord;
-    if(index > str.length-1) {
-        return str;
-    }
-    return str.substr(0,index) + "<span>"+ newChar +"</span>" + str.substr(index+1);
-}
+// function replaceChar(index,newChar) {
+//     var str = hiddenWord;
+//     if(index > str.length-1) {
+//         return str;
+//     }
+//     return str.substr(0,index) + "<span>"+ newChar +"</span>" + str.substr(index+1);
+// }
 
 //Verify if guessed letter is part of the chosen word
-function guessLetter (letter) {
-    var guessFlag = false;
-    gLetter = letter;
+// function guessLetter (letter) {
+//     var guessFlag = false;
+//     gLetter = letter;
 
-    for(var i=0;i<chosenWord.length;i++){
-        if (letter == chosenWord.charAt(i)) {
-            guessFlag = true;
-            hiddenWord = replaceChar(i,letter);
-        }
-    }
-    if (!guessFlag) {
-        guessedLetters += letter;
-        remainGuessCount--;
-    }
-    updateData();
-}
+//     for(var i=0;i<chosenWord.length;i++){
+//         if (letter == chosenWord.charAt(i)) {
+//             guessFlag = true;
+//             hiddenWord = replaceChar(i,letter);
+//         }
+//     }
+//     if (!guessFlag) {
+//         guessedLetters += letter;
+//         remainGuessCount--;
+//     }
+//     updateData();
+// }
 
 //Verify if guessed letter is part of the chosen word
 function guessLetterArray (letter) {
@@ -75,7 +84,8 @@ function guessLetterArray (letter) {
     for(var i=0;i<chosenWord.length;i++){
         if (letter == chosenWord[i]) {
             guessFlag = true;
-            hiddenWord[i] = letter;
+            //hiddenWord[i] = letter;
+            hiddenWord[i] = "<span class=\"discovered\">" + letter.toUpperCase() + "</span>";
         }
     }
     if (!guessFlag) {

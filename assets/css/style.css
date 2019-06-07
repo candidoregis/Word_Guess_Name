@@ -1,18 +1,59 @@
-.container {
+body {
     
+    width: 100%;
+    min-width: 660px;
 }
 
 .header {
     background-color: #5522ff;
-    height: 10%;
+    height: 70px;
 }
 
 .footer {
     background-color: #5522ff;
-    height: 10%;
+    height: 70px;
+}
+
+.jumbotron {
+    top: 100px;
+    left: 30px;
+    right: 30px;
+    max-width: 90%;
+    text-align: center;
 }
 
 .main {
-    height: 80%;
-    background-color: #220011;
+    min-height: 300px;
+    display: inline-block;
+    max-width: 90%;
 }
+
+h1 #hiddenWord {
+    text-align: center;
+}
+
+h1 span.hiddenL {
+    background-color: #5522ff;
+    padding: 10px;
+    margin: 10px;
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+h1 span.discovered {
+    background-color: yellow;
+    padding: 10px;
+    margin: 10px;
+    color: black;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.vertical-center {
+    min-height: 100%;  /* These two lines are counted as one :-)       */
+    display: flex;
+    align-items: center;
+  }
+
+ 
