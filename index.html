@@ -8,43 +8,180 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../Word_Guess_Name/assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="../Word_Guess_Name/assets/css/style.css">
-    <!-- <link rel="stylesheet" type="text/css" href="../Word_Guess_Name-master/assets/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="../Word_Guess_Name-master/assets/css/style.css"> -->
-
 
 </head>
 
 <body>
-    <!--  -->
-    <div class="row header fixed-top justify-content-center">
-        <h1 class="display-4">Word Guess Name</h1>
+
+    <div class="row header fixed-top float-left justify-content-center">
+        <h1 class="display-4">Word Guess Game</h1>
+
+        <!-- Carousel Header -->
+        <div class="row main-carrousel">
+            <div class="col-md-3 carousel-custom ">
+                <div id="carouselExampleSlidesOnly"
+                    class="carousel  carousel-custom slide col-md-12 float-left absolute no-gutter inline-block "
+                    data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img id="flagImg9" class="d-block w-100" src="#">
+                        </div>
+                        <div class="carousel-item">
+                            <img id="flagImg10" class="d-block w-100" src="#">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 carousel-custom ">
+                <div id="carouselExampleSlidesOnly"
+                    class="carousel  carousel-custom slide col-md-12 float-left absolute no-gutter inline-block "
+                    data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img id="flagImg11" class="d-block w-100" src="#">
+                        </div>
+                        <div class="carousel-item">
+                            <img id="flagImg12" class="d-block w-100" src="#">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 carousel-custom ">
+                <div id="carouselExampleSlidesOnly"
+                    class="carousel  carousel-custom slide col-md-12 float-left absolute no-gutter inline-block "
+                    data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img id="flagImg13" class="d-block w-100" src="#">
+                        </div>
+                        <div class="carousel-item">
+                            <img id="flagImg14" class="d-block w-100" src="#">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 carousel-custom ">
+                <div id="carouselExampleSlidesOnly"
+                    class="carousel  carousel-custom slide col-md-12 float-left absolute no-gutter inline-block "
+                    data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img id="flagImg15" class="d-block w-100" src="#">
+                        </div>
+                        <div class="carousel-item">
+                            <img id="flagImg16" class="d-block w-100" src="#">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    <div class="jumbotron col-12">
+    <div class="row jumbotron container-fluid col d-flex justify-content-center">
 
-        <div class="container main flex-column d-flex justify-content-center">
+        <div class="row container-fluid main d-flex col justify-content-center">
 
-            <!-- <h1>The word is:</h1> -->
-            <h1 id="hiddenWord" class="justify-content-center"></h1>
-            <br>
-            <!-- <h1>Guess a letter:</h1> -->
-            <h1 id="guessLetter"></h1>
+            <div class="row container-fluid guesses-custom align-items-start">
+                <div class="col justify-content-end">
+                    <h1 id="msg">Remaining Guesses</h1>
+                    <h1 id="remainingGuesses"></h1>
+                </div>
+            </div>
+            <div class="row container-fluid align-items-center">
+                <h1 id="hiddenWord" class="col justify-content-center"></h1>
+            </div>
 
-            <!-- <h1>Guessed Letters:</h1> -->
-            <h1 id="guessedLetters"></h1>
+            <div class="row container-fluid align-items-end">
+                <div class="col justify-content-center">
+                    <h1 id="guessLetter"></h1>
+                    <h1 id="guessedLetters"></h1>
+                </div>
+                <br>
+            </div>
 
-            <h1 id="msg">Remaining Guesses:</h1>
-            <h1 id="remainingGuesses"></h1>
-
+            <div class="row container-fluid align-items-end"></div>
         </div>
 
     </div>
 
 
-    <div class="row footer fixed-bottom justify-content-center">Candido Regis</div>
+    <div class="row footer fixed-bottom justify-content-center">
+        <h1 class="display-4">:Countries</h1>
+         <!-- Carousel Footer -->
+        <div class="row main-carrousel">
+            <div class="col-md-3 carousel-custom ">
+                <div id="carouselExampleSlidesOnly"
+                    class="carousel carousel-custom  slide col-md-12 float-left absolute no-gutter inline-block "
+                    data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img id="flagImg1" class="d-block w-100" src="#">
+                        </div>
+                        <div class="carousel-item">
+                            <img id="flagImg2" class="d-block w-100" src="#">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 carousel-custom ">
+                <div id="carouselExampleSlidesOnly"
+                    class="carousel carousel-custom slide col-md-12 float-left absolute no-gutter inline-block "
+                    data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img id="flagImg3" class="d-block w-100" src="#">
+                        </div>
+                        <div class="carousel-item">
+                            <img id="flagImg4" class="d-block w-100" src="#">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 carousel-custom ">
+                <div id="carouselExampleSlidesOnly"
+                    class="carousel carousel-custom  slide col-md-12 float-left absolute no-gutter inline-block "
+                    data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img id="flagImg5" class="d-block w-100" src="#">
+                        </div>
+                        <div class="carousel-item">
+                            <img id="flagImg6" class="d-block w-100" src="#">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 carousel-custom ">
+                <div id="carouselExampleSlidesOnly"
+                    class="carousel  carousel-custom slide col-md-12 float-left absolute no-gutter inline-block "
+                    data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img id="flagImg7" class="d-block w-100" src="#">
+                        </div>
+                        <div class="carousel-item">
+                            <img id="flagImg8" class="d-block w-100" src="#">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    </div>
 
     <script src="../Word_Guess_Name/assets/javascript/game.js"></script>
-    <!-- <script src="../Word_Guess_Name-master/assets/javascript/game.js"></script> -->
+
 </body>
 
 </html>
