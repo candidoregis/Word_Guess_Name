@@ -12,6 +12,7 @@ body {
     min-width: 660px;
 }
 
+/* HEADER PARAMETERS */
 .header {
     height: 120px;
     position: relative;
@@ -25,6 +26,7 @@ body {
     font-family: 'Bangers', cursive;
 }
 
+/* FOOTER PARAMETERS */
 .footer {
     height: 120px;
     position: relative;
@@ -38,20 +40,22 @@ body {
     font-size: 80px;
 }
 
+/* MAIN CONTAINER */
 .jumbotron {
     text-align: center;
     padding: 4em;
     margin: 0px;
 }
 
-.carousel-custom{
-    padding: 0px;
-}
-
 .main {
     min-height: 300px;
     background-color: black;
-    
+}
+
+/* REMAINING GUESSES */
+#msg{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #remainingGuesses{
@@ -59,6 +63,11 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.guesses-custom {
+    text-align: end;
+}
+
+/* DISPLAYING LETTERS PARAMETERS */
 h1 #hiddenWord {
     text-align: center;
 }
@@ -80,11 +89,6 @@ h1 span.discovered {
     font-size: 20px;
 }
 
-#msg{
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 h1 span.guessed {
     background-color: white;
     padding: 10px;
@@ -94,8 +98,9 @@ h1 span.guessed {
     color: red;
 }
 
-.guesses-custom {
-    text-align: end;
+/* CAROUSEL PARAMETERS */
+.carousel-custom{
+    padding: 0px;
 }
 
 .main-carrousel{
