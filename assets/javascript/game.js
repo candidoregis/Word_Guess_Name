@@ -1,7 +1,6 @@
 
 // VARIABLES    
-//var wordsList = ["Afghanistan","Albania","Algeria","Andorra","Angola","Argentina","Armenia","Australia","Austria","Azerbaijan","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bhutan","Bolivia","Botswana","Brazil","Brunei","Bulgaria","Burundi","Cambodia","Cameroon","Canada","Chad","Chile","China","Colombia","Comoros","Congo","Croatia","Cuba","Cyprus","Czechia","Denmark","Djibouti","Dominica","Ecuador","Egypt","Eritrea","Estonia","Eswatini","Ethiopia","Fiji","Finland","France","Gabon","Gambia","Georgia","Germany","Ghana","Greece","Grenada","Guatemala","Guinea","Guyana","Haiti","Honduras","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Israel","Italy","Jamaica","Japan","Jordan","Kazakhstan","Kenya","Kiribati","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Morocco","Mozambique","Myanmar","Namibia","Nauru","Nepal","Netherlands","Nicaragua","Niger","Nigeria","Norway","Oman","Pakistan","Palau","Palestine","Panama","Paraguay","Peru","Philippines","Poland","Portugal","Qatar","Romania","Russia","Rwanda","Samoa","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","Spain","Sudan","Suriname","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Togo","Tonga","Tunisia","Turkey","Turkmenistan","Tuvalu","Uganda","Ukraine","Uruguay","Uzbekistan","Vanuatu","Vatican","Venezuela","Vietnam","Yemen","Zambia","Zimbabwe"];
-var wordsList = ["Brazil"];
+var wordsList = ["Afghanistan","Albania","Algeria","Andorra","Angola","Argentina","Armenia","Australia","Austria","Azerbaijan","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bhutan","Bolivia","Botswana","Brazil","Brunei","Bulgaria","Burundi","Cambodia","Cameroon","Canada","Chad","Chile","China","Colombia","Comoros","Congo","Croatia","Cuba","Cyprus","Czechia","Denmark","Djibouti","Dominica","Ecuador","Egypt","Eritrea","Estonia","Eswatini","Ethiopia","Fiji","Finland","France","Gabon","Gambia","Georgia","Germany","Ghana","Greece","Grenada","Guatemala","Guinea","Guyana","Haiti","Honduras","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Israel","Italy","Jamaica","Japan","Jordan","Kazakhstan","Kenya","Kiribati","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Morocco","Mozambique","Myanmar","Namibia","Nauru","Nepal","Netherlands","Nicaragua","Niger","Nigeria","Norway","Oman","Pakistan","Palau","Palestine","Panama","Paraguay","Peru","Philippines","Poland","Portugal","Qatar","Romania","Russia","Rwanda","Samoa","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","Spain","Sudan","Suriname","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Togo","Tonga","Tunisia","Turkey","Turkmenistan","Tuvalu","Uganda","Ukraine","Uruguay","Uzbekistan","Vanuatu","Vatican","Venezuela","Vietnam","Yemen","Zambia","Zimbabwe"];
 var flagImages = ["ad.png", "ae.png", "af.png", "ag.png", "al.png", "am.png", "ao.png", "ar.png", "at.png", "au.png", "az.png", "ba.png", "bb.png", "bd.png", "be.png", "bf.png", "bg.png", "bh.png", "bi.png", "bj.png", "bn.png", "bo.png", "br.png", "bs.png", "bt.png", "bw.png", "by.png", "bz.png", "ca.png", "cd.png", "cf.png", "cg.png", "ch.png", "ci.png", "cl.png", "cm.png", "cn.png", "co.png", "cr.png", "cu.png", "cv.png", "cy.png", "cz.png", "de.png", "dj.png", "dk.png", "dm.png", "do.png", "dz.png", "ec.png", "ee.png", "eg.png", "eh.png", "er.png", "es.png", "et.png", "fi.png", "fj.png", "fm.png", "fr.png", "ga.png", "gb.png", "gd.png", "ge.png", "gh.png", "gm.png", "gn.png", "gq.png", "gr.png", "gt.png", "gw.png", "gy.png", "hn.png", "hr.png", "ht.png", "hu.png", "id.png", "ie.png", "il.png", "in.png", "iq.png", "ir.png", "is.png", "it.png", "jm.png", "jo.png", "jp.png", "ke.png", "kg.png", "kh.png", "ki.png", "km.png", "kn.png", "kp.png", "kr.png", "ks.png", "kw.png", "kz.png", "la.png", "lb.png", "lc.png", "li.png", "lk.png", "lr.png", "ls.png", "lt.png", "lu.png", "lv.png", "ly.png", "ma.png", "mc.png", "md.png", "me.png", "mg.png", "mh.png", "mk.png", "ml.png", "mm.png", "mn.png", "mr.png", "mt.png", "mu.png", "mv.png", "mw.png", "mx.png", "my.png", "mz.png", "na.png", "ne.png", "ng.png", "ni.png", "nl.png", "no.png", "np.png", "nr.png", "nz.png", "om.png", "pa.png", "pe.png", "pg.png", "ph.png", "pk.png", "pl.png", "pt.png", "pw.png", "py.png", "qa.png", "ro.png", "rs.png", "ru.png", "rw.png", "sa.png", "sb.png", "sc.png", "sd.png", "se.png", "sg.png", "si.png", "sk.png", "sl.png", "sm.png", "sn.png", "so.png", "sr.png", "st.png", "sv.png", "sy.png", "sz.png", "td.png", "tg.png", "th.png", "tj.png", "tl.png", "tm.png", "tn.png", "to.png", "tr.png", "tt.png", "tv.png", "tw.png", "tz.png", "ua.png", "ug.png", "us.png", "uy.png", "uz.png", "va.png", "vc.png", "ve.png", "vn.png", "vu.png", "ws.png", "ye.png", "za.png", "zm.png", "zw.png"];
 var remainGuessCount = 10;
 var chosenWord = [""];
@@ -12,6 +11,7 @@ var scoreWin = 0;
 var scoreLose = 0;
 var endGame = false;
 var hiddenWordValidation = [""];
+var rightGuessedLettersCount = 0;
 
 // Function do randomly select a word from the provided list and update global data
 function wordSelectorArray() {
@@ -60,6 +60,7 @@ function guessLetterArray(letter) {
             guessFlag = true;
             hiddenWordScreen[i] = "<span class=\"discovered\">" + letter + "</span>";
             hiddenWordValidation[i] = letter;
+            rightGuessedLettersCount++;
         }
     }
     if (!guessFlag) {
@@ -71,18 +72,18 @@ function guessLetterArray(letter) {
 
 // RegExp to verify if the input is an alphabet
 // Need review (doesnt work for function keys... ctrl, alt...)
-function justLetters(input) {
-    var regex = /^[a-z]+$/;
-    console.log("input recebido" + input);
-    var result = regex.test(input);
-    console.log(regex.test(input));
-    alert(result);
-    if (result) {
-        return true;
-    } else {
-        return false;
-    }
-}
+// function justLetters(input) {
+//     var regex = /^[a-z]+$/;
+//     console.log("input recebido" + input);
+//     var result = regex.test(input);
+//     console.log(regex.test(input));
+//     alert(result);
+//     if (result) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
 
 //Function to verify if the new letter has already been entered 
 function letterVerification(letterInput) {
@@ -122,6 +123,7 @@ function resetGame() {
     endGame = false;
 }
 
+// Function that starts the letter validation
 function playGame(input) {
     if (justLettersManual(input)) {   //checking if key entered is a letter
         if (letterVerification(input)) {   //checking if letter has been entered
@@ -132,12 +134,15 @@ function playGame(input) {
     }
 }
 
+// Function that validates the end of the game
 function validateEndGame() {
     var flag = false;
     for (var i = 0; i < chosenWord.length; i++) {
         if (hiddenWordValidation[i] === chosenWord[i]) { //checking if the hidden and chosen words are the same to end the game
             scoreWin++;
-            flag = true;
+            if (rightGuessedLettersCount == chosenWord.length) {
+                flag = true;
+            }
         } else {
             flag = false;
         }
@@ -149,6 +154,7 @@ function validateEndGame() {
     return flag;
 }
 
+// Function to restart the game
 function newGameStart() {
     resetGame();
     generateImgPath();
@@ -156,24 +162,51 @@ function newGameStart() {
     updateData();
 }
 
+// Displaying the results with an animation
+function youWinLose(result) {
+    var resultDisplayWrap = document.getElementById("resultWrapper");
+    var resultDisplayText = document.getElementById("hText");
+    var resultDisplayButton = document.getElementById("resBtn");
+    resultDisplayText.innerHTML = result;
+    resultDisplayWrap.className += (" result");
+    resultDisplayText.className += (" resultText");
+    resultDisplayButton.className += (" resultText");
+}
 
-//Main procedure
+// Resetting the class parameters to the results display
+function resetYouWinLose() {
+    var resultDisplayWrap = document.getElementById("resultWrapper");
+    var resultDisplayText = document.getElementById("hText");
+    var resultDisplayButton = document.getElementById("resBtn");
+    resultDisplayText.innerHTML = "";
+    resultDisplayWrap.className = ("row custom-wrap");
+    resultDisplayText.className = ("col custom-wrap-text");
+    resultDisplayButton.className = ("button custom-wrap-text");
+}
+
+
+// MAIN PROCEDURE
 newGameStart();
 
 document.onkeyup = function (event) {
     var userInput = event.key.toUpperCase();
-    playGame(userInput);
-    endGame = validateEndGame();
+
+    playGame(userInput); //send the letter entered 
+    endGame = validateEndGame(); //verify if the game has ended
+
     if (endGame) {  //ending the currently game and starting a new one
-        if (remainGuessCount == 0) { //warning the user that he lost due to not discover the hidden word
-            alert("You LOSE");
+
+        if (remainGuessCount == 0) { //displaying the results to user 
+            youWinLose("You LOSE");
+        } else {
+            youWinLose("You WIN");
         }
-        alert("You WON");
 
-        alert("NEW GAME");
-        newGameStart();
+        document.getElementById("resBtn").addEventListener("click", function () { //restarting game
+            newGameStart();
+            resetYouWinLose();
+        });
+
     }
-
-
 
 };
